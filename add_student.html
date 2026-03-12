@@ -153,14 +153,14 @@ document.getElementById('addStudentForm').addEventListener('submit', function(e)
 document.getElementById('addStudentForm').addEventListener('submit', function(e) {
     e.preventDefault();
 
-    // FormData eken thama dan data yawanne (files yana nisa)
+    
     let formData = new FormData();
     formData.append('full_name', document.getElementById('full_name').value);
     formData.append('email', document.getElementById('email').value);
     formData.append('phone', document.getElementById('phone').value);
     formData.append('address', document.getElementById('address').value);
 
-    // Photos tika FormData ekata danna loop eka
+    
     let imageFiles = document.getElementById('images').files;
     for(let i = 0; i < imageFiles.length; i++) {
         formData.append('images[]', imageFiles[i]);

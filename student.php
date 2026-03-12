@@ -30,11 +30,10 @@ class Student {
         return false;
     }
 
-    // Pagination saha Search ekka read function eka
     public function read($search_keyword = "", $offset = 0, $records_per_page = 5){
         $query = "SELECT id, full_name, email, phone, address FROM " . $this->table_name;
         
-        // Search karanawa nam
+        
         if(!empty($search_keyword)) {
             $query .= " WHERE full_name LIKE ? OR email LIKE ?";
         }
@@ -54,7 +53,7 @@ class Student {
         return $stmt->get_result();
     }
 
-    // Pitu gaana hadanna lamai okkoma keeyada kiyala ganna function eka
+   
     public function countAll($search_keyword = ""){
         $query = "SELECT COUNT(*) as total_rows FROM " . $this->table_name;
         

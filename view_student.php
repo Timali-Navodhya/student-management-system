@@ -67,7 +67,7 @@
                 document.getElementById('s_address').innerText = data.address || 'N/A';
                 document.getElementById('editBtn').href = `edit_student.html?id=${data.id}`;
 
-                // Photos load kirima
+                
                 const carouselInner = document.getElementById('carouselImages');
                 if(data.images && data.images.length > 0) {
                     data.images.forEach((img, index) => {
@@ -79,7 +79,7 @@
                         `;
                     });
                 } else {
-                    // Photos nathnam default image ekak pennanawa
+                    
                     carouselInner.innerHTML = `
                         <div class="carousel-item active">
                             <img src="https://via.placeholder.com/400x400?text=No+Photo+Available" class="d-block w-100" style="height: 400px; object-fit: cover;" alt="No Photo">

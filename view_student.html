@@ -64,7 +64,7 @@
 </div>
 
 <script>
-    // URL eken lamayage ID eka gannawa
+   
     const urlParams = new URLSearchParams(window.location.search);
     const studentId = urlParams.get('id');
 
@@ -73,21 +73,21 @@
         window.location.href = "index.html";
     }
 
-    // Backend eken data gennagannawa
+    
     fetch(`get_student.php?id=${studentId}`)
         .then(response => response.json())
         .then(data => {
             if(data.id) {
-                // Details tika HTML ekata danawa
+               
                 document.getElementById('s_name').innerText = data.full_name;
                 document.getElementById('s_email').innerText = data.email;
                 document.getElementById('s_phone').innerText = data.phone ? data.phone : 'Not Provided';
                 document.getElementById('s_address').innerText = data.address ? data.address : 'Not Provided';
                 document.getElementById('editBtn').href = `edit_student.html?id=${data.id}`;
 
-                // Photos load kirima
+               
                 const carouselInner = document.getElementById('carouselImages');
-                carouselInner.innerHTML = ''; // Kalin thibba loading text eka makala danawa
+                carouselInner.innerHTML = ''; 
 
                 if(data.images && data.images.length > 0) {
                     data.images.forEach((img, index) => {
@@ -99,7 +99,7 @@
                         `;
                     });
                 } else {
-                    // Photos nathnam default image ekak pennanawa
+                    
                     carouselInner.innerHTML = `
                         <div class="carousel-item active">
                             <img src="https://ui-avatars.com/api/?name=${data.full_name}&background=random&color=fff&size=400" class="d-block w-100" style="height: 450px; object-fit: contain; background-color: #212529;" alt="No Photo">

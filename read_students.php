@@ -9,11 +9,11 @@ $database = new Database();
 $db = $database->getConnection();
 $student = new Student($db);
 
-// Search word eka saha page eka gannawa
+
 $search_keyword = isset($_GET['search']) ? $_GET['search'] : "";
 $page = isset($_GET['page']) ? $_GET['page'] : 1;
 
-// Eka pitakata pennana gaana (5k damu balanna lesi nisa)
+
 $records_per_page = 5;
 $offset = ($records_per_page * $page) - $records_per_page;
 
@@ -30,7 +30,7 @@ if($result->num_rows > 0){
     }
 }
 
-// Pagination array eka hadima
+
 $total_pages = ceil($total_rows / $records_per_page);
 $students_arr["paging"] = array(
     "total_records" => $total_rows,

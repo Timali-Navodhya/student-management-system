@@ -59,14 +59,14 @@
 </div>
 
 <script>
-    // Security check
+   
     if(!localStorage.getItem('user_id')) {
         window.location.href = 'login.html';
     }
 
     const userId = localStorage.getItem('user_id');
     
-    // Page load weddi details tika gannawa
+   
     fetch(`get_profile.php?id=${userId}`)
     .then(response => response.json())
     .then(data => {
@@ -75,12 +75,12 @@
             document.getElementById('name').value = data.name;
             document.getElementById('email').value = data.email;
             
-            // Avatar eke nama wenas karanawa
+            
             document.getElementById('profileImage').src = `https://ui-avatars.com/api/?name=${data.name}&background=0D8ABC&color=fff&size=100`;
         }
     });
 
-    // Form eka submit karaddi
+    
     document.getElementById('profileForm').addEventListener('submit', function(e) {
         e.preventDefault();
         
@@ -101,12 +101,11 @@
             const msgBox = document.getElementById('messageBox');
             if(data.status === 'success') {
                 msgBox.innerHTML = `<div class="alert alert-success">${data.message}</div>`;
-                // Browser eke save wela thiyena nama aluth karanawa
+                
                 localStorage.setItem('user_name', updateData.name);
                 
-                // Avatar eka aluth karanawa
                 document.getElementById('profileImage').src = `https://ui-avatars.com/api/?name=${updateData.name}&background=0D8ABC&color=fff&size=100`;
-                document.getElementById('password').value = ''; // Password box eka clear karanawa
+                document.getElementById('password').value = ''; 
             } else {
                 msgBox.innerHTML = `<div class="alert alert-danger">${data.message}</div>`;
             }

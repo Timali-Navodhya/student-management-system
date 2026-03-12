@@ -57,7 +57,7 @@ class User {
         return $result->num_rows > 0;
     }
 
-    // Aluthin dapu function 1: User ge wisthara ganna
+    
     public function readOne(){
         $query = "SELECT name, email, role FROM " . $this->table_name . " WHERE id = ?";
         $stmt = $this->conn->prepare($query);
@@ -74,9 +74,9 @@ class User {
         return false;
     }
 
-    // Aluthin dapu function 2: Profile eka update karanna
+  
     public function update(){
-        // Password eka aluthin dila nam ekath ekkama update wenawa
+        
         if(!empty($this->password)){
             $query = "UPDATE " . $this->table_name . " SET name=?, email=?, password=? WHERE id=?";
             $stmt = $this->conn->prepare($query);
@@ -85,7 +85,7 @@ class User {
             $hashed_password = password_hash($this->password, PASSWORD_DEFAULT);
             $stmt->bind_param("sssi", $this->name, $this->email, $hashed_password, $this->id);
         } else {
-            // Password eka dila nattam name ekai email ekai witharak update wenawa
+            
             $query = "UPDATE " . $this->table_name . " SET name=?, email=? WHERE id=?";
             $stmt = $this->conn->prepare($query);
             $this->name = htmlspecialchars(strip_tags($this->name));

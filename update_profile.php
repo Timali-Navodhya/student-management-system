@@ -16,7 +16,7 @@ if(!empty($data->id) && !empty($data->name) && !empty($data->email)){
     $user->id = $data->id;
     $user->name = $data->name;
     $user->email = $data->email;
-    $user->password = !empty($data->password) ? $data->password : ""; // Password eka dila nattan empty yawanawa
+    $user->password = !empty($data->password) ? $data->password : ""; 
 
     if($user->update()){
         http_response_code(200);

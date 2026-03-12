@@ -14,7 +14,7 @@ $student->readOne();
 
 if($student->full_name != null){
     
-    // Lamayage photos tika ganna aluth query eka
+  
     $image_query = "SELECT image_path FROM student_images WHERE student_id = ?";
     $img_stmt = $db->prepare($image_query);
     $img_stmt->bind_param("i", $student->id);
@@ -32,7 +32,7 @@ if($student->full_name != null){
         "email" => $student->email,
         "phone" => $student->phone,
         "address" => $student->address,
-        "images" => $images // Photos array eka JSON ekata ekathu kara
+        "images" => $images 
     );
     http_response_code(200);
     echo json_encode($student_arr);

@@ -19,7 +19,7 @@ if(!empty($_POST['full_name']) && !empty($_POST['email'])){
     $student_id = $student->create(); 
 
     if($student_id){
-        // isset() eka damme photo nathuwa save karaddi ena warning eka nawaththanna
+        
         if(isset($_FILES['images']) && !empty($_FILES['images']['name'][0])){
             $upload_dir = "uploads/";
             
@@ -39,7 +39,7 @@ if(!empty($_POST['full_name']) && !empty($_POST['email'])){
         echo json_encode(array("message" => "Student saved successfully.", "status" => "success"));
     } else {
         http_response_code(503);
-        // Duplicate email aawoth kiyanna
+        
         echo json_encode(array("message" => "Unable to save. The Email Address might already exist.", "status" => "error"));
     }
 } else {

@@ -53,7 +53,7 @@ document.getElementById('registerForm').addEventListener('submit', function(e) {
     let confirm_password = document.getElementById('confirm_password').value;
     let msgBox = document.getElementById('messageBox');
 
-    // Password Validation
+    
     if(password !== confirm_password) {
         msgBox.innerHTML = `<div class="alert alert-warning">Passwords do not match!</div>`;
         return;
@@ -71,7 +71,7 @@ document.getElementById('registerForm').addEventListener('submit', function(e) {
         if(data.status === 'success') {
             msgBox.innerHTML = `<div class="alert alert-success">${data.message}</div>`;
             document.getElementById('registerForm').reset();
-            // Thathpara 2kin login page ekata yanawa
+            
             setTimeout(() => { window.location.href = 'login.html'; }, 2000);
         } else {
             msgBox.innerHTML = `<div class="alert alert-danger">${data.message}</div>`;
