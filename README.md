@@ -1,4 +1,4 @@
-<img width="1853" height="814" alt="A" src="https://github.com/user-attachments/assets/91f3701c-61fb-4a31-9395-f3380eadf763" />
+<img width="1751" height="722" alt="ER StudentManagement drawio" src="https://github.com/user-attachments/assets/1f26f070-a52c-46ed-a32a-f9d30581ddf7" /><img width="1853" height="814" alt="A" src="https://github.com/user-attachments/assets/91f3701c-61fb-4a31-9395-f3380eadf763" />
 <img width="836" height="850" alt="B" src="https://github.com/user-attachments/assets/8310c4bf-31db-4a92-992c-60a20d1a25be" />
 <img width="1806" height="854" alt="C" src="https://github.com/user-attachments/assets/e9c8e073-4b1b-47d0-aed1-09091ab06889" />
 <img width="835" height="756" alt="D" src="https://github.com/user-attachments/assets/685740fe-2367-4c20-b981-77583d3d699f" />
@@ -50,3 +50,22 @@ Password: (leave blank)(If your MySQL setup has a different password, update it 
 Step 5: Run the Application
 Open your web browser and navigate to the following URL: http://localhost/student-management-system/
 
+API Endpoints List
+
+The backend is built using PHP (OOP) following an API-driven architecture. The frontend communicates with these endpoints using JavaScript `fetch()`.
+
+# User Authentication & Profile
+* **POST** `/register_user.php` - Register a new user (Requires: name, email, password)
+* **POST** `/login_user.php` - Authenticate user and return user details (Requires: email, password)
+* **GET** `/get_profile.php?id={id}` - Fetch details of the logged-in user
+* **POST** `/update_profile.php` - Update user profile information (name, email, password)
+
+# Student Management (CRUD)
+* **GET** `/read_students.php?page={page}&search={query}` - Fetch all students (Supports pagination and search)
+* **GET** `/get_student.php?id={id}` - Fetch a single student's details along with associated images
+* **POST** `/create_student.php` - Add a new student to the system (Supports multiple image file uploads)
+* **POST** `/update_student.php` - Update existing student details
+* **POST** `/delete_student.php` - Delete a student record and associated data from the database
+
+# ER Diagram 
+<img width="1751" height="722" alt="ER StudentManagement drawio" src="https://github.com/user-attachments/assets/e4cfed22-ffcc-45e2-8823-5bb63204815f" />
