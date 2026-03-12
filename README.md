@@ -14,3 +14,39 @@
 <img width="1761" height="905" alt="G" src="https://github.com/user-attachments/assets/9de20996-a5a8-4d67-a9d4-2bf3b1542142" />
 <img width="1850" height="894" alt="F" src="https://github.com/user-attachments/assets/4aa38984-cf03-4706-9a31-162700b563cd" />
 <img width="868" height="840" alt="E" src="https://github.com/user-attachments/assets/2bab5020-6a20-44a2-8437-15456f8d8d18" />
+
+
+Setup Instructions
+
+Prerequisites
+* Local Server Environment: Download and install [XAMPP](https://www.apachefriends.org/index.html) or WAMP server.
+* Web Browser:Google Chrome, Firefox, or Edge.
+* Code Editor: VS Code (optional, for viewing the code).
+
+Installation Steps
+
+Step 1: Download the Project
+Clone this repository using Git or download it as a ZIP file and extract it.
+bash
+git clone (https://github.com/Timali-Navodhya/student-management-system.git)
+
+Step 2: Move to Local Server
+Copy the extracted project folder (student-management-system) and paste it inside the htdocs folder of your XAMPP installation (usually located at C:\xampp\htdocs\)
+
+Step 3: Database Configuration
+
+Open the XAMPP Control Panel and start Apache and MySQL.
+Open your web browser and go to http://localhost/phpmyadmin/.
+Click on "New" to create a new database and name it student_db.
+Click on the newly created student_db database, go to the "Import" tab.
+Choose the student_db.sql file provided in the project folder and click "Import" (or "Go") at the bottom to create all tables and insert sample data.
+
+Step 4: Database Connection (If needed)
+By default, the system connects using the standard XAMPP credentials:
+Host: localhost
+Username: root
+Password: (leave blank)(If your MySQL setup has a different password, update it in the db.php file).
+
+Step 5: Run the Application
+Open your web browser and navigate to the following URL: http://localhost/student-management-system/
+
